@@ -8,6 +8,10 @@ VibeCoding Business Studio
 
 AI can write the code. We teach the learner to own the project.
 
+## Public Demo
+
+https://vibecoding-business-studio.moyamiga.chatgpt.site
+
 ## Track
 
 Education
@@ -186,7 +190,7 @@ Export the learning report.
 
 ## Submission Checklist
 
-- [ ] Public application URL
+- [x] Public application URL: https://vibecoding-business-studio.moyamiga.chatgpt.site
 - [ ] Public YouTube video URL under three minutes with voiceover
 - [ ] `/feedback` Codex session ID from the primary build thread
 - [ ] Exact GPT-5.6 model identifier used

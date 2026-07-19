@@ -7,6 +7,10 @@ learners turn an idea they care about into a small, testable project while
 developing product judgment, execution habits, business thinking, verification
 skills, and responsible AI use.
 
+[Live Demo](https://vibecoding-business-studio.moyamiga.chatgpt.site) |
+[Submission Draft](./DEVPOST_SUBMISSION.md) |
+[Judges Testing Guide](./JUDGES_TESTING.md)
+
 This repository no longer treats a game as the product. The product is the
 learning workflow around **ideas, scope, milestones, decisions, verification,
 reflection, and evidence**.
@@ -63,7 +67,7 @@ See [`JUDGES_TESTING.md`](./JUDGES_TESTING.md) for the detailed path.
 
 OpenAI Build Week submissions close on **July 21, 2026 at 5:00 PM Pacific Time**. Before submitting, verify these items against the official Devpost rules:
 
-- working public demo URL;
+- working public demo URL: <https://vibecoding-business-studio.moyamiga.chatgpt.site>;
 - public YouTube demo video under three minutes with voiceover;
 - repository URL for judging and testing;
 - README explanation of how Codex and GPT-5.6 were used;
@@ -105,6 +109,7 @@ of accepting a result because an AI produced it.
 - Vite
 - browser `localStorage`
 - optional server-side OpenAI Responses API endpoint
+- OpenAI Sites deployment
 - GitHub Actions for type-checking and build validation
 - Vercel-compatible serverless function
 
@@ -159,6 +164,15 @@ Never use a `VITE_` variable for the OpenAI API key. Vite client variables are
 included in browser code.
 
 ## Deployment
+
+### OpenAI Sites
+
+The primary public demo is deployed with OpenAI Sites:
+
+<https://vibecoding-business-studio.moyamiga.chatgpt.site>
+
+This deployment runs the full browser workflow and uses the transparent local
+coach fallback when the optional OpenAI endpoint is not configured.
 
 ### Vercel
 

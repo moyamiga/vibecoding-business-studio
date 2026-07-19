@@ -19,6 +19,12 @@ This prototype makes that ownership visible.
 
 ### 1. Start the application
 
+Open the public demo:
+
+https://vibecoding-business-studio.moyamiga.chatgpt.site
+
+For local review, use:
+
 ```bash
 npm ci
 npm run dev

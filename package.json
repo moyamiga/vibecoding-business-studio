@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/moyamiga/vibecoding-business-studio.git"
   },
-  "homepage": "https://github.com/moyamiga/vibecoding-business-studio#readme",
+  "homepage": "https://vibecoding-business-studio.moyamiga.chatgpt.site",
   "engines": {
     "node": ">=20"
   },
