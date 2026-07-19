@@ -1,33 +1,27 @@
 {
   "name": "vibecoding-business-studio",
-  "description": "AI-assisted education model for vibe coding, business, teamwork, and project-based learning.",
-  "version": "1.4.0",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AI-guided project learning workspace for product judgment, execution, business thinking, and responsible AI use.",
+  "author": "moyamiga",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/moyamiga/vibecoding-business-studio.git"
   },
-  "author": "VibeCoding Business Studio Team",
-  "license": "MIT",
-  "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
-  "bugs": {
-    "url": "https://github.com/moyamiga/vibecoding-business-studio/issues"
+  "homepage": "https://vibecoding-business-studio.moyamiga.chatgpt.site",
+  "engines": {
+    "node": ">=20"
   },
-  "homepage": "https://github.com/moyamiga/vibecoding-business-studio#readme",
   "scripts": {
-    "dev": "node log.js dev & vite --config vite/config.dev.mjs",
-    "build": "node log.js build & vite build --config vite/config.prod.mjs",
-    "dev-nolog": "vite --config vite/config.dev.mjs",
-    "build-nolog": "vite build --config vite/config.prod.mjs"
+    "dev": "vite --config vite/config.dev.mjs",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run typecheck && vite build --config vite/config.prod.mjs && node scripts/create-sites-worker.mjs",
+    "preview": "vite preview --host 0.0.0.0 --port 4173"
   },
   "devDependencies": {
     "typescript": "~5.7.2",
     "vite": "^6.3.1"
-  },
-  "dependencies": {
-    "@capacitor/android": "^8.4.1",
-    "@capacitor/cli": "^8.4.1",
-    "@capacitor/core": "^8.4.1",
-    "phaser": "4.0.0",
-    "terser": "^5.39.0"
   }
 }
