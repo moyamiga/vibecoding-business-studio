@@ -556,6 +556,27 @@ select {
   background: var(--yellow-soft);
 }
 
+.writing-review {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: start;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-medium);
+  background: #f8f6ef;
+}
+
+.writing-review pre {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
 .coach-badge {
   display: inline-flex;
   align-items: center;
@@ -982,9 +1003,14 @@ select {
 
   .section-actions.between,
   .milestone-header,
-  .prompt-header {
+  .prompt-header,
+  .writing-review {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .writing-review {
+    grid-template-columns: 1fr;
   }
 
   .section-actions.between > *,

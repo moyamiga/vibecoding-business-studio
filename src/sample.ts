@@ -10,50 +10,50 @@ export function createSampleState(language: Language): StudioState {
   const state = createEmptyState(language);
 
   state.project = {
-    title: 'Student Spending Compass',
+    title: 'Sneaker Studio Tycoon',
     idea:
-      'A simple application for recording expenses and showing which categories consume money during the week.',
+      'A small management game where players run a sneaker company, design shoes, choose marketing moves, and react to business events.',
     audience:
-      'High-school or university students managing a small budget for the first time',
+      'Kids building with friends who enjoy games but are also ready to practice planning, writing, teamwork, and business decisions',
     problem:
-      'They record expenses inconsistently and cannot see which habits consumed their money at the end of the week.',
+      'They want to build an exciting game, but they often add features without clear roles, roadmap control, writing clarity, or business reasoning.',
     motivation:
-      'I want a small tool to support better decisions without connecting bank accounts.',
+      'I want learners to build something fun while practicing real-world decisions about marketing, operations, hiring, taxes, and teamwork.',
     timebox: '2 weeks',
     skillLevel: 'beginner'
   };
 
   const plan: ScopePlan = {
     oneSentencePitch:
-      'Student Spending Compass helps students with a small budget understand their weekly spending.',
+      'Sneaker Studio Tycoon helps a team learn coding, writing, teamwork, and business thinking by building a small sneaker-company game.',
     challenge:
-      'Bank connections, predictions, and accounts would distract from the first question: does recording and summarizing expenses support one better weekly decision?',
+      'A full business game could expand forever. The first milestone should prove one playable business decision and one clear team workflow before adding complex finance, international operations, hiring systems, or a large economy.',
     firstMilestone:
-      'Let a learner record amount, category, and note, then show a weekly summary by category.',
+      'Let a player choose one sneaker design, select one marketing action, and see a simple outcome while the team documents who owns design, roadmap, testing, and business ideas.',
     included: [
-      'Amount, category, and note form',
-      'Recorded-expense list',
-      'Weekly category summary',
-      'Local storage',
-      'One test with a student'
+      'One sneaker design choice',
+      'One marketing decision',
+      'Simple revenue or popularity outcome',
+      'Team roles with roadmap permissions',
+      'Prompt-writing feedback before asking Codex to build'
     ],
     postponed: [
-      'Bank connections',
-      'Sign-in',
-      'AI predictions',
-      'Payments and subscriptions',
-      'Native mobile application'
+      'Full hiring system',
+      'Taxes and accountants simulation',
+      'International partnerships',
+      'CEO and executive management tree',
+      'Large economy or multiplayer marketplace'
     ],
     successEvidence:
-      'One student records five expenses without help, identifies the largest category, and explains one decision for the next week.',
+      'A player can complete one sneaker-and-marketing turn, and each teammate can explain their role, one business tradeoff, and one prompt improvement.',
     businessQuestion:
-      'What would need to happen for a student to return to the tool every week?',
+      'Which business action should the game teach first: marketing, hiring, taxes, accounting, product design, or international relationships?',
     aiLiteracyQuestion:
-      'Which validations did you inspect yourself, and which did you accept only because Codex proposed them?',
+      'Which part of the prompt did you rewrite because it was unclear before asking Codex to implement it?',
     risks: [
-      'Collecting identifiable financial information',
-      'Confusing a prototype with financial advice',
-      'Adding predictions before validating manual entry'
+      'The game may become too large before the first business lesson is playable',
+      'Friends may change roadmap decisions outside their role',
+      'Learners may accept AI business advice without checking whether it makes sense'
     ]
   };
 
@@ -63,10 +63,18 @@ export function createSampleState(language: Language): StudioState {
   state.milestones[1].status = 'in-progress';
   state.buildSession = {
     milestoneId: 'core-flow',
+    writingDraft:
+      'Make my sneaker company game better and add business stuff.',
+    writingFeedback:
+      'This request is too broad. Name the player action, the business concept, the teammate role, and the evidence for success before asking Codex to build.',
     learnerDecision:
-      'We will use local storage because the first milestone validates the workflow, not accounts or infrastructure.',
+      'The project owner controls roadmap changes. The first milestone teaches marketing choice before adding hiring, taxes, accounting, or international expansion.',
+    businessDecision:
+      'We will compare two marketing choices inside the game and ask what would make a customer care about the sneaker brand.',
+    teamRoles:
+      'Owner: roadmap and scope. Designer: sneaker visuals only. Tester: records bugs and unclear instructions. Business lead: proposes marketing, hiring, tax, and partnership ideas but cannot change scope alone.',
     implementationNotes:
-      'Create the form, list, and summary. Do not add authentication, complex charts, or bank connections.',
+      'Create one playable turn with design choice, marketing choice, and outcome. Do not add multiplayer, executive hiring, taxes, accounting, or international expansion yet.',
     verificationEvidence: ''
   };
   state.coach = {

@@ -66,6 +66,7 @@ sessions covering:
 | 2026-07-19 | Added server-side OpenAI coach and local fallback | Files: `api/coach.mjs`, `src/coach.ts` | Model evidence still requires a configured GPT-5.6 request |
 | 2026-07-19 | Added documentation, testing path, CI, and submission materials | Files: `README.md`, `JUDGES_TESTING.md`, `DEVPOST_SUBMISSION.md`, `.github/workflows/ci.yml` | CI run: https://github.com/moyamiga/vibecoding-business-studio/actions/runs/29699072262 |
 | 2026-07-19 | Deployed the public demo with OpenAI Sites | Public URL: https://vibecoding-business-studio.moyamiga.chatgpt.site | Verified with HTTP 200 for the page and JavaScript asset on 2026-07-19 |
+| 2026-07-19 | Expanded the learning model beyond coding to include prompt-writing feedback, business reasoning, team roles, and roadmap permissions | Files: `src/main.ts`, `src/report.ts`, `src/sample.ts`, `README.md`, `DEVPOST_SUBMISSION.md`, `LEARNING_METHOD.md`, `JUDGES_TESTING.md` | Added after human product-owner clarification that learners should practice writing, business planning, and collaboration while building |
 
 ## OpenAI Evidence
 
@@ -108,6 +109,10 @@ owner:
 - The learner, not the generated artifact, became the center of the product.
 - The first MVP focuses on idea, scope, milestones, Codex preparation,
   reflection, and evidence.
+- The Studio now treats prompt writing, team roles, and business decisions as
+  first-class learning moments, not side notes.
+- The sample project is a sneaker-company game because games can carry real
+  lessons about marketing, hiring, taxes, accounting, leadership, and teamwork.
 - Authentication, payments, classroom administration, native apps, and complex
   integrations were postponed.
 - The API key remains server-side.

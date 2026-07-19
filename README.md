@@ -1,19 +1,19 @@
 # VibeCoding Business Studio
 
-> **AI can write the code. We teach the learner to own the project.**
+> **AI helps learners build. The Studio teaches them to write, plan, collaborate, and own decisions.**
 
 VibeCoding Business Studio is an AI-guided project learning workspace. It helps
 learners turn an idea they care about into a small, testable project while
-developing product judgment, execution habits, business thinking, verification
-skills, and responsible AI use.
+developing vibe coding, clearer writing, product judgment, business thinking,
+teamwork, role ownership, verification skills, and responsible AI use.
 
 [Live Demo](https://vibecoding-business-studio.moyamiga.chatgpt.site) |
 [Submission Draft](./DEVPOST_SUBMISSION.md) |
 [Judges Testing Guide](./JUDGES_TESTING.md)
 
-This repository no longer treats a game as the product. The product is the
-learning workflow around **ideas, scope, milestones, decisions, verification,
-reflection, and evidence**.
+This repository no longer treats any single game or artifact as the product.
+The product is the learning workflow around **ideas, writing, scope, milestones,
+business decisions, team roles, verification, reflection, and evidence**.
 
 ## Why It Exists
 
@@ -22,9 +22,12 @@ AI makes implementation much faster, but speed alone does not teach someone:
 - who a product is for;
 - which problem matters;
 - how to reduce a large idea;
+- how to write a clear request before asking AI or teammates to act;
 - what evidence would prove progress;
 - how to verify AI-generated work;
 - when a decision has business, privacy, or safety consequences;
+- how to assign roles so friends can collaborate without taking over the
+  roadmap;
 - how to explain what was learned.
 
 VibeCoding Business Studio places those decisions back in the learner's hands.
@@ -39,10 +42,12 @@ The current MVP includes a complete browser-based learning loop:
    scope and proposes the smallest useful milestone.
 3. **Milestone plan** — the Studio generates buildable stages with definitions
    of done, learning concepts, and product questions.
-4. **Guided Codex session** — the learner records the decision they own, expected
-   evidence, and scope guardrails, then exports a structured prompt for Codex.
-5. **Reflection** — the learner explains what changed, what they decided, how
-   they verified it, and what remains unclear.
+4. **Guided Codex session** - the learner reviews prompt clarity, records the
+   decision they own, connects one business or real-world tradeoff, assigns team
+   roles, defines evidence, and exports a structured prompt for Codex.
+5. **Reflection** - the learner explains what changed, what they decided, how
+   they verified it, what writing, teamwork, product, or business lesson
+   appeared, and what remains unclear.
 6. **Learning evidence** — the Studio exports a Markdown report for a learner,
    mentor, parent, teacher, or portfolio.
 
@@ -55,9 +60,11 @@ A reviewer can understand the prototype in under three minutes:
 
 1. Open the application.
 2. Select **Load sample**.
-3. Review the scope challenge and postponed features.
+3. Review the scope challenge and postponed features for the sample sneaker
+   company game.
 4. Open **Milestones** and inspect the definition of done.
-5. Open **Build session** and copy the generated Codex prompt.
+5. Open **Build session**, review writing feedback, inspect team roles, and copy
+   the generated Codex prompt.
 6. Complete or inspect the reflection.
 7. Export the learning report.
 
@@ -102,6 +109,21 @@ The learner should be able to answer:
 
 The Studio asks the learner to identify what they inspected themselves instead
 of accepting a result because an AI produced it.
+
+### Collaboration needs roles
+
+Learners can invite friends, but each teammate should have a written area of
+ownership. A designer can own visuals without changing the roadmap. A tester can
+log bugs without redefining scope. A business lead can propose marketing, taxes,
+accounting, hiring, or partnership ideas without silently taking over the
+project.
+
+### Games can teach real-world thinking
+
+A learner may build a game, but the lesson can go beyond the game. A sneaker
+company game can introduce marketing, customer value, hiring, taxes, accounting,
+international relationships, leadership, and planning while the team implements
+small playable decisions.
 
 ## Technology
 
@@ -237,7 +259,7 @@ placing credentials in the browser.
 - payments;
 - grading automation;
 - native mobile applications;
-- complex team permissions;
+- complex automated team permissions;
 - repository write access;
 - a full learning management system.
 

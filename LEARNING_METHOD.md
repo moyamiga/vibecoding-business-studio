@@ -4,11 +4,17 @@
 
 VibeCoding Business Studio is a project-based learning method for people who
 want to build real software with AI while developing judgment, execution,
-business awareness, teamwork habits, and responsible AI literacy.
+business awareness, writing clarity, teamwork habits, role ownership, and
+responsible AI literacy.
 
 The project may be a website, application, automation, internal tool, campaign,
 data project, game, or another digital outcome. The type of software is
 secondary. The learning method is the product.
+
+The method treats vibe coding as one part of a broader learning experience.
+Learners also practice writing clearer prompts, planning milestones, assigning
+roles with friends, making business decisions, and connecting playful projects
+to real-world concepts.
 
 ## Learning Outcome
 
@@ -21,6 +27,16 @@ A successful learner should be increasingly able to:
 5. verify output with observable evidence;
 6. connect technical choices to product and business consequences;
 7. explain what was learned and what remains unclear.
+
+Extended outcomes:
+
+- write a clearer project request before asking AI or teammates to act;
+- separate a fun artifact, such as a game, from the real-world lesson inside it;
+- assign team roles and permission boundaries;
+- connect project choices to marketing, pricing, hiring, taxes, accounting,
+  partnerships, customer value, or other business concepts;
+- explain which decisions belonged to the learner, the team, the mentor, and
+  the AI assistant.
 
 ## Roles
 
@@ -71,6 +87,15 @@ return decisions to the learner when appropriate.
 When a project has multiple learners, each person should have a written area of
 ownership. Cross-area changes should be discussed rather than silently merged.
 
+Example:
+
+- Project owner controls roadmap and final scope acceptance.
+- Designer owns visual direction but does not silently add features.
+- Tester owns bug reports and evidence, not product priorities.
+- Business lead proposes marketing, pricing, taxes, hiring, accounting, or
+  partnership ideas, but major roadmap changes still need owner agreement.
+- Mentor reviews money, privacy, publication, legal, and safety decisions.
+
 ## Six-Stage Learning Loop
 
 ### 1. Idea
@@ -84,7 +109,10 @@ The learner describes:
 - how much time is available;
 - their current experience.
 
-The output is a project brief, not a technology stack.
+The output is a project brief, not a technology stack. The Studio also treats
+the learner's writing as part of the learning: if the request is vague,
+ungrammatical, or missing context, the learner should improve the prompt before
+asking AI or teammates to act on it.
 
 ### 2. Reality Check
 
@@ -98,8 +126,10 @@ The output includes:
 - work included now;
 - work explicitly postponed;
 - evidence of success;
+- writing or prompt clarity feedback;
 - one business question;
 - one AI-literacy question;
+- one collaboration or role risk when friends are involved;
 - risks that need supervision.
 
 Postponing work is treated as a decision, not a failure.
@@ -218,6 +248,14 @@ A technical decision may affect:
 
 The method introduces one relevant business question at a time rather than
 turning the project into an abstract business course.
+
+Example:
+
+A team may build a sneaker-company game. The game loop can stay small, but the
+learning can introduce real business ideas: marketing, customer demand, hiring a
+CEO, taxes, accountants, international relationships, partnerships, brand trust,
+and operating costs. Learners apply those ideas inside the game, then reflect on
+how the same concepts appear in real businesses.
 
 ### Reflection and Ownership
 

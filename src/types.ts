@@ -47,7 +47,11 @@ export interface Milestone {
 
 export interface BuildSession {
   milestoneId: string;
+  writingDraft: string;
+  writingFeedback: string;
   learnerDecision: string;
+  businessDecision: string;
+  teamRoles: string;
   implementationNotes: string;
   verificationEvidence: string;
 }
@@ -109,7 +113,11 @@ export function createEmptyState(language: Language): StudioState {
     milestones: [],
     buildSession: {
       milestoneId: '',
+      writingDraft: '',
+      writingFeedback: '',
       learnerDecision: '',
+      businessDecision: '',
+      teamRoles: '',
       implementationNotes: '',
       verificationEvidence: ''
     },

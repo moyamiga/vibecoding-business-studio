@@ -89,7 +89,10 @@ function completionPercent(): number {
   if (state.plan) completed++;
   if (state.milestones.length > 0) completed++;
   if (
+    state.buildSession.writingDraft.trim() ||
     state.buildSession.learnerDecision.trim() ||
+    state.buildSession.businessDecision.trim() ||
+    state.buildSession.teamRoles.trim() ||
     state.buildSession.implementationNotes.trim() ||
     state.buildSession.verificationEvidence.trim()
   ) {
@@ -119,6 +122,72 @@ function renderList(items: string[], className = ''): string {
   return `<ul class="clean-list ${className}">
     ${items.map((item) => `<li>${safe(item)}</li>`).join('')}
   </ul>`;
+}
+
+function analyzeWritingDraft(value: string): string {
+  const draft = value.replace(/\s+/g, ' ').trim();
+  const lower = draft.toLowerCase();
+  const improvements: string[] = [];
+  const strengths: string[] = [];
+
+  if (!draft) {
+    return 'Write the project request first. Then the Studio can review clarity, grammar, specificity, and missing context.';
+  }
+
+  if (draft.length >= 80) {
+    strengths.push('The request has enough length to carry context.');
+  } else {
+    improvements.push('Add more context: who is using it, what they do, and what result should happen.');
+  }
+
+  if (/[.!?]$/.test(draft)) {
+    strengths.push('The request ends with punctuation.');
+  } else {
+    improvements.push('End the request with punctuation so it reads like a complete instruction.');
+  }
+
+  if (/player|learner|student|customer|user|friend|team|mentor/.test(lower)) {
+    strengths.push('The request mentions a person or role.');
+  } else {
+    improvements.push('Name the person involved, such as player, learner, customer, teammate, or tester.');
+  }
+
+  if (/test|verify|evidence|done|measure|observe|works|success/.test(lower)) {
+    strengths.push('The request includes evidence or verification language.');
+  } else {
+    improvements.push('Add what success looks like: a test, observation, evidence, or definition of done.');
+  }
+
+  if (/business|marketing|cost|price|tax|accountant|customer|sales|hiring|ceo|partner|brand/.test(lower)) {
+    strengths.push('The request connects the project to a business concept.');
+  } else {
+    improvements.push('Add one real-world or business concept the learner should practice.');
+  }
+
+  if (/roadmap|owner|designer|tester|role|permission|responsible/.test(lower)) {
+    strengths.push('The request mentions ownership, roles, or permissions.');
+  } else {
+    improvements.push('If friends are collaborating, add who owns design, testing, business ideas, and roadmap decisions.');
+  }
+
+  if (/\b(stuff|things|better|cool|nice|etc)\b/.test(lower)) {
+    improvements.push('Replace vague words like "stuff", "things", "better", or "etc." with specific actions.');
+  }
+
+  const strengthText =
+    strengths.length > 0
+      ? strengths.map((item) => `- ${item}`).join('\n')
+      : '- The request has a starting idea, but it needs more precision.';
+  const improvementText =
+    improvements.length > 0
+      ? improvements.map((item) => `- ${item}`).join('\n')
+      : '- The request is clear enough for a first Codex pass. Keep the milestone small.';
+
+  return `What is working:
+${strengthText}
+
+Improve before asking Codex:
+${improvementText}`;
 }
 
 function renderHeader(): string {
@@ -528,6 +597,25 @@ function renderBuild(): string {
         </div>
 
         <label class="field">
+          <span>${c.writingDraft}</span>
+          <textarea
+            data-build-field="writingDraft"
+            rows="4"
+            placeholder="${c.writingDraftHint}"
+          >${escapeHtml(state.buildSession.writingDraft)}</textarea>
+        </label>
+
+        <div class="writing-review">
+          <div>
+            <span class="card-label">${c.writingFeedback}</span>
+            <pre>${escapeHtml(state.buildSession.writingFeedback || c.writingFeedbackEmpty)}</pre>
+          </div>
+          <button class="ghost-button" type="button" data-action="review-writing">
+            ${c.reviewWriting}
+          </button>
+        </div>
+
+        <label class="field">
           <span>${c.learnerDecision}</span>
           <textarea
             data-build-field="learnerDecision"
@@ -535,6 +623,26 @@ function renderBuild(): string {
             placeholder="${c.learnerDecisionHint}"
           >${escapeHtml(state.buildSession.learnerDecision)}</textarea>
         </label>
+
+        <div class="two-column">
+          <label class="field">
+            <span>${c.businessDecision}</span>
+            <textarea
+              data-build-field="businessDecision"
+              rows="4"
+              placeholder="${c.businessDecisionHint}"
+            >${escapeHtml(state.buildSession.businessDecision)}</textarea>
+          </label>
+
+          <label class="field">
+            <span>${c.teamRoles}</span>
+            <textarea
+              data-build-field="teamRoles"
+              rows="4"
+              placeholder="${c.teamRolesHint}"
+            >${escapeHtml(state.buildSession.teamRoles)}</textarea>
+          </label>
+        </div>
 
         <label class="field">
           <span>${c.implementationNotes}</span>
@@ -976,6 +1084,15 @@ function attachHandlers(): void {
         if (action === 'copy-prompt') {
           await copyText(buildCodexPrompt(state));
           setToast(c.copied);
+          return;
+        }
+
+        if (action === 'review-writing') {
+          state.buildSession.writingFeedback = analyzeWritingDraft(
+            state.buildSession.writingDraft
+          );
+          persist();
+          render();
           return;
         }
 

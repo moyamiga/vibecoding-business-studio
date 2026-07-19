@@ -46,9 +46,25 @@ Act as a technical build partner and coach. Accelerate implementation without ta
 - Learning concept: ${milestone.learningConcept}
 - Product question: ${milestone.productQuestion}
 
+## Learner writing draft
+
+${valueOrDash(state.buildSession.writingDraft)}
+
+## Writing clarity feedback
+
+${valueOrDash(state.buildSession.writingFeedback)}
+
 ## Decision owned by the learner
 
 ${valueOrDash(state.buildSession.learnerDecision)}
+
+## Business or real-world lens
+
+${valueOrDash(state.buildSession.businessDecision)}
+
+## Team roles and permissions
+
+${valueOrDash(state.buildSession.teamRoles)}
 
 ## Implementation notes
 
@@ -65,18 +81,22 @@ ${list(state.plan.postponed)}
 ## Working method
 
 1. Before changing code, summarize your understanding and identify contradictions.
-2. Propose the smallest verifiable change; do not expand scope.
-3. Explain which files you will modify and why.
-4. When a product, cost, privacy, or risk decision appears, stop and present options to the learner.
-5. Run the available checks.
-6. At the end, report:
+2. If the learner request is unclear, point out the writing issue and suggest a clearer version before implementing.
+3. Respect team roles and do not let one teammate silently change another teammate's area or the project roadmap.
+4. Propose the smallest verifiable change; do not expand scope.
+5. Explain which files you will modify and why.
+6. When a product, cost, privacy, teamwork, business, or risk decision appears, stop and present options to the learner.
+7. Run the available checks.
+8. At the end, report:
    - files changed;
    - what works;
    - how it was verified;
    - assumptions;
    - debt or risks;
+   - writing or collaboration issues noticed;
+   - business or real-world tradeoff practiced;
    - one question that checks learner understanding.
-7. Never expose credentials, private chats, or identifying information about minors.
+9. Never expose credentials, private chats, or identifying information about minors.
 
 ## Expected evidence
 
@@ -133,7 +153,11 @@ ${state.milestones.length > 0
 
 ## 4. Build evidence
 
+- **Learner writing draft:** ${valueOrDash(state.buildSession.writingDraft)}
+- **Writing clarity feedback:** ${valueOrDash(state.buildSession.writingFeedback)}
 - **Learner decision:** ${valueOrDash(state.buildSession.learnerDecision)}
+- **Business or real-world lens:** ${valueOrDash(state.buildSession.businessDecision)}
+- **Team roles and permissions:** ${valueOrDash(state.buildSession.teamRoles)}
 - **Implementation notes:** ${valueOrDash(state.buildSession.implementationNotes)}
 - **Verification evidence:** ${valueOrDash(state.buildSession.verificationEvidence)}
 
@@ -150,7 +174,9 @@ ${state.milestones.length > 0
 ## 6. AI use and ownership
 
 - AI may accelerate planning, implementation, explanation, and debugging.
+- AI may also help learners improve writing clarity, grammar, business reasoning, and role planning.
 - The learner retains scope, acceptance, and priority decisions.
+- Team members should keep written ownership areas and ask before changing another person's work or the roadmap.
 - Verification must rely on observable evidence rather than automatic trust.
 - Money, publication, privacy, external accounts, and irreversible changes require supervision.
 

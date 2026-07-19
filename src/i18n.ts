@@ -3,7 +3,8 @@ import type { Language, StudioStep } from './types';
 const copy = {
   en: {
     appName: 'VibeCoding Business Studio',
-    tagline: 'AI can write code. The learner must still own the project.',
+    tagline:
+      'AI helps learners build; the Studio teaches them to write, plan, collaborate, and own decisions.',
     localFirst: 'Private by default · Saved in this browser',
     newProject: 'New project',
     loadSample: 'Load sample',
@@ -18,9 +19,9 @@ const copy = {
     },
     ideaTitle: 'Start with a real idea',
     ideaIntro:
-      'Describe something you care about. The Studio will challenge the scope instead of praising everything.',
+      'Describe something you care about. The Studio will challenge scope, clarify writing, surface business tradeoffs, and prepare team roles instead of praising everything.',
     projectTitle: 'Project name',
-    projectTitleHint: 'Example: Student Spending Compass',
+    projectTitleHint: 'Example: Sneaker Studio Tycoon',
     ideaLabel: 'What do you want to build?',
     ideaHint: 'Describe the product or outcome, not the technology.',
     audienceLabel: 'Who is it for?',
@@ -67,11 +68,24 @@ const copy = {
     markInProgress: 'Mark in progress',
     buildTitle: 'Prepare a guided Codex session',
     buildIntro:
-      'Codex can implement faster, but the learner should state the decision, verification method, and expected evidence.',
+      'Codex can implement faster, but the learner should clarify the request, assign roles, state business tradeoffs, and define evidence.',
     currentMilestone: 'Current milestone',
+    writingDraft: 'Learner prompt or project request',
+    writingDraftHint:
+      'Write the request in your own words. The Studio can point out unclear wording before Codex builds from it.',
+    reviewWriting: 'Review writing',
+    writingFeedback: 'Writing clarity feedback',
+    writingFeedbackEmpty:
+      'Write a project request and select Review writing to get clarity, grammar, and specificity feedback.',
     learnerDecision: 'Decision the learner owns',
     learnerDecisionHint:
       'Example: We will use local storage because this milestone validates the workflow, not accounts.',
+    businessDecision: 'Business or real-world lens',
+    businessDecisionHint:
+      'Example: In our sneaker company game, we will test marketing before adding taxes, accountants, international partners, or a CEO role.',
+    teamRoles: 'Team roles and permissions',
+    teamRolesHint:
+      'Example: Owner controls roadmap. Designer owns visuals. Tester logs bugs. Business lead proposes marketing and cost ideas.',
     implementationNotes: 'Implementation notes',
     implementationNotesHint:
       'What should Codex change? What should remain outside scope?',
@@ -88,7 +102,8 @@ const copy = {
     reflectionBuilt: 'What did you build?',
     reflectionDecision: 'What decision did you make?',
     reflectionVerification: 'How do you know it works?',
-    reflectionBusiness: 'What product or business lesson appeared?',
+    reflectionBusiness:
+      'What writing, teamwork, product, or business lesson appeared?',
     reflectionLearned: 'What do you understand now?',
     reflectionUnclear: 'What remains unclear?',
     reflectionNext: 'What is the next small milestone?',
@@ -105,7 +120,7 @@ const copy = {
     offlineWarning:
       'The OpenAI endpoint was unavailable, so the Studio used its local coaching rules. The workflow remains testable.',
     resetConfirm: 'Delete the project saved in this browser and start over?',
-    sampleName: 'Student Spending Compass',
+    sampleName: 'Sneaker Studio Tycoon',
     next: 'Next',
     back: 'Back'
   }

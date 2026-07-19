@@ -107,7 +107,10 @@ function localPlan(project: ProjectInput): ScopePlan {
       `Build a small version in which one person can complete the core "${idea}" workflow and the learner can explain how it was verified.`,
     included: [
       'A clear brief with a user, problem, and expected outcome',
+      'A rewritten prompt or request that is specific enough for a teammate or Codex',
       'One core workflow that can be tested from start to finish',
+      'One business or real-world tradeoff connected to the project',
+      'Written team roles when more than one learner participates',
       'Sample data or local storage when that is enough',
       'One observable test with a real person or realistic scenario',
       'A written reflection about decisions and limits'
@@ -117,6 +120,7 @@ function localPlan(project: ProjectInput): ScopePlan {
       'Payments, marketplaces, or automated monetization',
       'External integrations that do not prove the core value',
       'Scaling, native apps, and premature optimization',
+      'Team members changing roadmap decisions outside their role',
       'Features added only because the AI can build them'
     ],
     successEvidence:
@@ -127,7 +131,10 @@ function localPlan(project: ProjectInput): ScopePlan {
       'Which part of the result did you personally verify instead of assuming it was correct because an AI produced it?',
     risks: [
       'The scope may expand again during implementation',
+      'The prompt may be too vague for Codex or teammates to follow',
+      'Team roles may be unclear, causing roadmap changes without agreement',
       'The learner may accept code without understanding the decision',
+      'The learner may accept business advice without checking context',
       'The test may prove that something works but not that it is useful',
       'Personal data or credentials may be entered accidentally'
     ]
@@ -197,10 +204,11 @@ export function buildMilestones(
       tasks: [
         'Review the one-sentence product',
         'Confirm one primary user',
+        'Rewrite the learner request in clearer language',
         'Accept or edit the postponed-feature list',
         'Define evidence for the first milestone'
       ],
-      learningConcept: 'Product scope and acceptance criteria',
+      learningConcept: 'Product scope, writing clarity, and acceptance criteria',
       productQuestion: plan.businessQuestion,
       status: 'not-started'
     },
@@ -212,11 +220,13 @@ export function buildMilestones(
         'The core workflow can be completed from start to finish with sample data and without postponed features.',
       tasks: [
         'Prepare a structured Codex prompt',
+        'State team roles and permission boundaries',
+        'Connect one technical choice to a business or real-world decision',
         'Implement the smallest verifiable change',
         'Run the available build or check',
         'Record files, decisions, and limitations'
       ],
-      learningConcept: 'Iterative implementation and verification',
+      learningConcept: 'Iterative implementation, collaboration, and verification',
       productQuestion:
         'Which part of the workflow removes the most friction for the primary user?',
       status: 'not-started'
@@ -231,10 +241,11 @@ export function buildMilestones(
       tasks: [
         'Prepare a short test task',
         'Observe without explaining every step',
+        'Notice whether wording or role assignment caused confusion',
         'Record where the person stops or hesitates',
         'Choose one evidence-backed change'
       ],
-      learningConcept: 'User testing and evidence of value',
+      learningConcept: 'User testing, communication, and evidence of value',
       productQuestion:
         'Did the person complete the goal because the product was clear or because they received help?',
       status: 'not-started'
@@ -249,10 +260,11 @@ export function buildMilestones(
       tasks: [
         'Complete the reflection',
         'Connect one technical decision to product or business',
+        'Record one writing or teamwork lesson',
         'Name one real uncertainty',
         'Export the learning report'
       ],
-      learningConcept: 'Ownership, metacognition, and communication',
+      learningConcept: 'Ownership, business thinking, metacognition, and communication',
       productQuestion: plan.aiLiteracyQuestion,
       status: 'not-started'
     }

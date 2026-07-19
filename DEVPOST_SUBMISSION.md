@@ -6,7 +6,7 @@ VibeCoding Business Studio
 
 ## Tagline
 
-AI can write the code. We teach the learner to own the project.
+AI helps learners build. The Studio teaches them to write, plan, collaborate, and own decisions.
 
 ## Public Demo
 
@@ -20,13 +20,13 @@ Education
 
 VibeCoding Business Studio is an AI-guided project learning workspace where
 learners turn their own ideas into small, testable projects while developing
-product judgment, execution habits, business thinking, verification skills, and
-responsible AI use.
+vibe coding, clearer writing, product judgment, business thinking, teamwork,
+role ownership, verification skills, and responsible AI use.
 
 The product does not begin with syntax lessons or a fixed tutorial project. It
 begins with something the learner cares about, challenges the scope, creates
-milestones, prepares a guided Codex session, and turns the work into evidence of
-learning.
+milestones, reviews the learner's writing, assigns collaboration roles, prepares
+a guided Codex session, and turns the work into evidence of learning.
 
 ## Inspiration
 
@@ -38,7 +38,9 @@ understands:
 - why the product matters;
 - what should be built first;
 - how to verify the result;
+- how to express the request clearly enough for AI and teammates;
 - what decision belongs to the learner;
+- which teammate owns design, testing, business ideas, or roadmap decisions;
 - how a technical choice affects cost, privacy, adoption, or maintenance.
 
 We wanted an experience that uses AI speed without giving away learner
@@ -46,7 +48,7 @@ ownership.
 
 ## What It Does
 
-VibeCoding Business Studio guides a learner through six stages:
+VibeCoding Business Studio guides a learner or small team through six stages:
 
 1. **Idea** — define the project, user, problem, motivation, time, and current
    experience.
@@ -63,6 +65,13 @@ VibeCoding Business Studio guides a learner through six stages:
 
 The application is English-only for judging, stores project data locally, and
 has a transparent local fallback when the OpenAI endpoint is unavailable.
+
+The sample project is a sneaker-company game. The game is not the product; it is
+the learning context. Learners can practice coding a playable decision while
+also discussing marketing, customer value, hiring, taxes, accounting,
+international relationships, leadership, and team permissions. The Studio asks
+them to improve the prompt before Codex builds from it, then records who owns
+design, testing, business ideas, and roadmap decisions.
 
 ## How We Built It
 
@@ -83,6 +92,7 @@ Codex was used as a development partner to:
 - create the English judging interface;
 - write the server-side coach;
 - create the guided Codex session prompt;
+- add writing clarity review, business lens, and team-role capture;
 - document the method and judging flow.
 
 Before submission, add the exact Codex session ID and model evidence to
@@ -91,11 +101,13 @@ Before submission, add the exact Codex session ID and model evidence to
 ## What Makes It Different
 
 Many AI education products teach through answers, quizzes, or generated code.
-VibeCoding Business Studio focuses on **project ownership**.
+VibeCoding Business Studio focuses on **project ownership across disciplines**.
 
 The learner must make scope visible, state a decision, define evidence, and
-reflect. The AI is allowed to accelerate work, but it is not allowed to silently
-own the project.
+reflect. In team projects, friends can participate without everyone having the
+same authority: one learner may own design, another testing, another business
+ideas, while the project owner protects the roadmap. The AI is allowed to
+accelerate work, but it is not allowed to silently own the project.
 
 The core question is not:
 
@@ -104,7 +116,8 @@ The core question is not:
 It is:
 
 > Can the learner explain what was built, why it was scoped this way, how it was
-> verified, and what should happen next?
+> verified, who owned which role, what business idea was practiced, and what
+> should happen next?
 
 ## Challenges
 
@@ -115,6 +128,10 @@ It is:
 - The OpenAI integration had to remain server-side.
 - The product needed to challenge unrealistic scope without discouraging the
   learner.
+- The Studio needed to support games as learning contexts without becoming a
+  game-only product.
+- Collaboration needed to be lightweight enough for kids and friends, but clear
+  enough to protect roadmap ownership.
 - Reflection had to produce concrete evidence rather than generic journaling.
 
 ## Accomplishments
@@ -124,6 +141,8 @@ It is:
 - Added an English-only judging flow.
 - Added a server-side OpenAI coach with a visible local fallback.
 - Created structured milestone and Codex session generation.
+- Added prompt-writing review, business-learning prompts, and team-role
+  guardrails.
 - Added local persistence and Markdown report export.
 - Added CI for type-checking and production builds.
 - Clearly separated prior work from the Build Week product direction.
@@ -137,8 +156,11 @@ A learner does not need to memorize every line generated by AI, but they should
 be able to explain:
 
 - the user and problem;
+- the clarity of the prompt they wrote;
 - the current scope;
 - the decision they own;
+- the role each teammate owns;
+- the business or real-world tradeoff they practiced;
 - the evidence that the result works;
 - the limits and uncertainty;
 - the next small milestone.
@@ -166,7 +188,7 @@ scope, decisions, verification, or business consequences.
 
 ### 0:20–0:45 — Idea
 
-Create or load the Student Spending Compass project.
+Create or load the Sneaker Studio Tycoon project.
 
 ### 0:45–1:15 — Reality Check
 
