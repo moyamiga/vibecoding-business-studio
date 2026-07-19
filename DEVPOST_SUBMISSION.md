@@ -173,6 +173,14 @@ testable project from an exciting but unfinished vision.
 - Validate the workflow with learners and mentors.
 - Add editable scope and milestone feedback.
 - Add mentor comments without turning the product into a full LMS.
+- Add parent or teacher summaries covering progress, risks, role ownership, and
+  next steps.
+- Add mobile-first collaboration through tools such as Telegram so learners can
+  participate from their phones.
+- Add role-based access so teammates can contribute according to their job
+  description without silently changing the roadmap.
+- Add a real-time project activity page where the team and mentor can see
+  changes, decisions, and evidence.
 - Connect completed Codex sessions to evidence automatically.
 - Add optional rubric scoring.
 - Support project templates for different age groups and learning contexts.

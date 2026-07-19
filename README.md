@@ -260,6 +260,9 @@ placing credentials in the browser.
 - grading automation;
 - native mobile applications;
 - complex automated team permissions;
+- Telegram or external messaging integration;
+- real-time collaboration;
+- parent or teacher dashboard;
 - repository write access;
 - a full learning management system.
 

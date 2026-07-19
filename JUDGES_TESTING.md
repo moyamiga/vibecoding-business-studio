@@ -172,6 +172,9 @@ This is not intended to be:
 - an automated grader;
 - a commercial classroom administration system;
 - a game;
+- a live Telegram integration;
+- a real-time collaboration system;
+- a finished role-based access-control layer;
 - a replacement for teachers or mentors.
 
 Evaluate the clarity and usefulness of the learning workflow.
