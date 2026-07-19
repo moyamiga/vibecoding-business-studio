@@ -52,16 +52,12 @@ sessions covering:
 
 ## Evidence Table
 
-Fill this table with actual commit links and session evidence.
-
 | Date | Change | Commit / files | Codex session or other evidence |
 | --- | --- | --- | --- |
-| 2026-07-19 | Reframed the product around learner ownership and project-based education | Add commit link | Add Codex session ID |
-| 2026-07-19 | Implemented the educational Studio MVP | Add commit link | Add Codex session ID |
-| 2026-07-19 | Added server-side OpenAI coach and local fallback | Add commit link | Add model and session evidence |
-| 2026-07-19 | Added documentation, testing path, and submission materials | Add commit link | Add session evidence |
-
-Change the dates above if the actual commits occur on a different date.
+| 2026-07-19 | Reframed the product around learner ownership and project-based education | Pull request: https://github.com/moyamiga/vibecoding-business-studio/pull/1 | Add `/feedback` Codex session ID before Devpost submission |
+| 2026-07-19 | Implemented the English-only educational Studio MVP | Commit: https://github.com/moyamiga/vibecoding-business-studio/commit/ba005d7f41bb95cefff392ea0845852cb89a2bb3 | Built in this Codex task; add official session ID before submission |
+| 2026-07-19 | Added server-side OpenAI coach and local fallback | Files: `api/coach.mjs`, `src/coach.ts` | Model evidence still requires a configured GPT-5.6 request |
+| 2026-07-19 | Added documentation, testing path, CI, and submission materials | Files: `README.md`, `JUDGES_TESTING.md`, `DEVPOST_SUBMISSION.md`, `.github/workflows/ci.yml` | CI run: https://github.com/moyamiga/vibecoding-business-studio/actions/runs/29697764605 |
 
 ## OpenAI Evidence
 
@@ -94,27 +90,26 @@ owner:
 
 2026-07-19, local temporary copy:
 
-- 
-pm ci --no-audit --no-fund passed.
-- 
-pm run typecheck passed.
-- 
-pm run build passed.
-- Vite preview responded with HTTP 200 at http://127.0.0.1:4173.
+- `npm ci --no-audit --no-fund` passed.
+- `npm run typecheck` passed.
+- `npm run build` passed.
+- Vite preview responded with HTTP 200 at `http://127.0.0.1:4173`.
 
-This validates the exported project state, but the final submission should still include CI and deployment links after the project is pushed to GitHub.
+This validates the exported project state. GitHub CI also passed on the pushed branch:
+
+- https://github.com/moyamiga/vibecoding-business-studio/actions/runs/29697764605
 
 ## Verification Evidence
 
 Attach or link:
 
-- [ ] successful `npm run typecheck`;
-- [ ] successful `npm run build`;
-- [ ] GitHub Actions run;
+- [x] successful `npm run typecheck`;
+- [x] successful `npm run build`;
+- [x] GitHub Actions run;
 - [ ] public deployment;
 - [ ] OpenAI coach request using the declared model;
-- [ ] fallback-coach test;
-- [ ] English flow test;
+- [x] fallback-coach test;
+- [x] English flow test;
 - [ ] Markdown report export;
 - [ ] mobile viewport test;
 - [ ] sub-three-minute video.
