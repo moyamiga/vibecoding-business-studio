@@ -1,36 +1,42 @@
 # Build Week Evidence
 
-This file separates prior work from the educational product created during
-OpenAI Build Week.
+This file separates prior work from the educational product created during OpenAI Build Week. It records only claims that can be tied to repository history, the primary Codex session, CI, or the public deployment.
 
-Only add evidence that can be verified. Do not invent dates, sessions, model use,
-or development history.
+## Submission Evidence
 
-## Verified Submission Requirements
+- **Track:** Education
+- **Public demo:** https://vibecoding-business-studio.moyamiga.chatgpt.site
+- **Repository:** https://github.com/moyamiga/vibecoding-business-studio
+- **Primary `/feedback` Codex Session ID:** `019f2a76-e8c6-77c0-adc4-67efd2e87a`
+- **Build-time model:** GPT-5.6 through Codex
+- **Primary CI run:** https://github.com/moyamiga/vibecoding-business-studio/actions/runs/29699072262
 
-Based on the official OpenAI Build Week Devpost rules checked on 2026-07-19, the submission needs:
+## How Codex and GPT-5.6 Were Used
 
-- a working project in the Education track;
-- meaningful Codex and GPT-5.6 use;
-- a public YouTube demo video under three minutes with voiceover;
-- a repository URL judges can access;
-- README documentation of Codex collaboration, human decisions, and GPT-5.6 usage;
-- a `/feedback` Codex Session ID from the primary build thread;
-- evidence distinguishing prior work from Build Week work.
+The majority of the current educational product was developed in the Codex session identified above. Codex with GPT-5.6 was used as a development partner to:
 
-Official rules reference:
+- refocus the repository from a game-centered experiment into an educational product;
+- define the six-stage learning workflow;
+- design the TypeScript domain model;
+- implement the browser application;
+- add scope coaching, milestone generation, prompt-writing review, team roles, reflection, and report export;
+- create the optional server-side OpenAI coach endpoint;
+- remove the former game and Unity prototype from the product surface;
+- debug and revise the implementation;
+- prepare the README, judging guide, evidence log, and Devpost material;
+- run and interpret type-check, build, CI, deployment, and HTTP verification results.
 
-- https://openai.devpost.com/rules
-- Submission deadline: July 21, 2026 at 5:00 PM Pacific Time.
-- The demo video must be under three minutes, publicly visible on YouTube, include audio, and explain how Codex and GPT-5.6 were used.
-- The README must describe Codex collaboration, human product and engineering decisions, and how GPT-5.6 and Codex contributed.
+The human product owner made the central product decisions. GPT-5.6 and Codex accelerated reasoning, implementation, revision, and verification, but did not choose the final product direction independently.
+
+## Runtime AI Clarification
+
+The public OpenAI Sites demo currently remains fully testable through a transparent local coaching fallback. The repository also contains a server-side OpenAI Responses API endpoint at `api/coach.mjs`.
+
+The build-time use of GPT-5.6 through Codex is separate from runtime API use inside the public demo. This repository does **not** claim that every public demo interaction calls GPT-5.6. A live runtime API model should only be claimed after `OPENAI_API_KEY` and `OPENAI_MODEL` are configured and a request is verified.
 
 ## Prior Work
 
-The repository began as a game-building experiment. That experiment helped
-surface a broader learning problem: AI can accelerate implementation, but
-learners still need help with scope, product judgment, verification, business
-tradeoffs, and reflection.
+The repository began as a game-building experiment. That work helped reveal a broader educational problem: AI can accelerate implementation, but learners still need help with writing, scope, product judgment, verification, teamwork, business tradeoffs, and reflection.
 
 The former TempleFall prototype remains available in Git history at:
 
@@ -40,116 +46,53 @@ The former TempleFall prototype remains available in Git history at:
 
 The game is not part of the current product claim.
 
-## Current Product Direction
+## Build Week Product Work
 
-VibeCoding Business Studio is now an AI-guided project learning workspace.
-
-The Build Week product should be evidenced through dated commits and Codex
-sessions covering:
-
-- the project brief workflow;
-- scope coaching;
-- milestone generation;
-- the guided Codex session brief;
-- learner reflection;
-- report export;
-- English-only judging experience;
-- server-side OpenAI integration;
-- build validation and deployment.
-
-## Evidence Table
-
-| Date | Change | Commit / files | Codex session or other evidence |
-| --- | --- | --- | --- |
-| 2026-07-19 | Reframed the product around learner ownership and project-based education | Pull request: https://github.com/moyamiga/vibecoding-business-studio/pull/1 | Add `/feedback` Codex session ID before Devpost submission |
-| 2026-07-19 | Implemented the English-only educational Studio MVP | Commit: https://github.com/moyamiga/vibecoding-business-studio/commit/ba005d7f41bb95cefff392ea0845852cb89a2bb3 | Built in this Codex task; add official session ID before submission |
-| 2026-07-19 | Added server-side OpenAI coach and local fallback | Files: `api/coach.mjs`, `src/coach.ts` | Model evidence still requires a configured GPT-5.6 request |
-| 2026-07-19 | Added documentation, testing path, CI, and submission materials | Files: `README.md`, `JUDGES_TESTING.md`, `DEVPOST_SUBMISSION.md`, `.github/workflows/ci.yml` | CI run: https://github.com/moyamiga/vibecoding-business-studio/actions/runs/29699072262 |
-| 2026-07-19 | Deployed the public demo with OpenAI Sites | Public URL: https://vibecoding-business-studio.moyamiga.chatgpt.site | Verified with HTTP 200 for the page and JavaScript asset on 2026-07-19 |
-| 2026-07-19 | Expanded the learning model beyond coding to include prompt-writing feedback, business reasoning, team roles, and roadmap permissions | Files: `src/main.ts`, `src/report.ts`, `src/sample.ts`, `README.md`, `DEVPOST_SUBMISSION.md`, `LEARNING_METHOD.md`, `JUDGES_TESTING.md` | Added after human product-owner clarification that learners should practice writing, business planning, and collaboration while building |
-
-## OpenAI Evidence
-
-Before submission, record:
-
-- **Codex session ID:** `TODO - obtain by running /feedback in the primary Codex project thread`
-- **Primary session:** `TODO - paste the returned Codex session reference`
-- **Exact GPT-5.6 model identifier:** `TODO - paste the exact model identifier used by the submitted session or configured API request`
-- **Where the model was used:** Codex was used to refocus the project, implement the Studio workflow, remove the game-centered product surface, add the OpenAI coach endpoint, validate builds, deploy the public demo, and prepare judging materials. Runtime OpenAI API use is not yet verified in this repository because no `OPENAI_API_KEY` or `OPENAI_MODEL` value is configured in the checked local environment.
-- **How the response was verified:** Codex-generated implementation changes were verified with TypeScript checks, production builds, GitHub Actions, public Sites deployment, and HTTP checks. A GPT-5.6 API coach response still requires one configured request before it can be claimed as verified.
-
-Do not claim GPT-5.6 API use solely because the code supports it. Record evidence
-from an actual configured and tested request.
-
-### Current GPT-5.6 Evidence Status
-
-Verified:
-
-- The project includes a server-side OpenAI Responses API endpoint at `api/coach.mjs`.
-- The browser never receives an API key.
-- The public OpenAI Sites deployment remains usable through the local fallback coach.
-- Build and deployment evidence is available through GitHub commits, CI, and the public demo URL.
-
-Not yet verified:
-
-- A live GPT-5.6 API coach request.
-- The exact GPT-5.6 model identifier used in the submitted Codex session.
-- The `/feedback` Codex Session ID required by Devpost.
-
-Submission-safe wording until the missing evidence is added:
-
-> The project was built with Codex during OpenAI Build Week. The application includes a server-side OpenAI coach endpoint designed for GPT-5.6, with a transparent local fallback for judge testing. The exact `/feedback` Codex Session ID and model evidence should be attached in Devpost before final submission.
+| Date | Change | Evidence |
+| --- | --- | --- |
+| 2026-07-19 | Reframed the product around learner ownership and project-based education | Pull request: https://github.com/moyamiga/vibecoding-business-studio/pull/1 |
+| 2026-07-19 | Implemented the educational Studio MVP | Commit: https://github.com/moyamiga/vibecoding-business-studio/commit/ba005d7f41bb95cefff392ea0845852cb89a2bb3 |
+| 2026-07-19 | Added the server-side OpenAI coach and local fallback | `api/coach.mjs`, `src/coach.ts` |
+| 2026-07-19 | Added documentation, testing, CI, and submission materials | `README.md`, `JUDGES_TESTING.md`, `DEVPOST_SUBMISSION.md`, `.github/workflows/ci.yml` |
+| 2026-07-19 | Deployed the public demo with OpenAI Sites | https://vibecoding-business-studio.moyamiga.chatgpt.site |
+| 2026-07-19 | Expanded the learning model to include writing, business reasoning, team roles, and decision boundaries | Commit: https://github.com/moyamiga/vibecoding-business-studio/commit/6f899b80c51d769ce9d1bf20028d7a5101ea9c86 |
 
 ## Human Product Decisions
 
-The following product decisions should remain attributable to the human project
-owner:
+The following decisions belong to Moy as the project owner:
 
 - The game prototype was removed from the product experience.
 - The learner, not the generated artifact, became the center of the product.
-- The first MVP focuses on idea, scope, milestones, Codex preparation,
-  reflection, and evidence.
-- The Studio now treats prompt writing, team roles, and business decisions as
-  first-class learning moments, not side notes.
-- The sample project is a sneaker-company game because games can carry real
-  lessons about marketing, hiring, taxes, accounting, leadership, and teamwork.
-- Authentication, payments, classroom administration, native apps, and complex
-  integrations were postponed.
-- The API key remains server-side.
-- The application remains testable through a transparent local fallback.
+- The MVP focuses on idea definition, writing clarity, scope, milestones, Codex preparation, reflection, and evidence.
+- Prompt writing, business reasoning, team roles, and roadmap ownership became first-class learning moments.
+- The sneaker-company game remains only as a sample learning context.
+- Authentication, payments, classroom administration, native apps, real-time collaboration, and complex permissions were postponed.
+- API credentials remain server-side.
+- The application remains usable through a visible local fallback.
 
-## Local Validation Log
+## Verification Log
 
-2026-07-19, local temporary copy:
+Verified:
 
-- `npm ci --no-audit --no-fund` passed.
-- `npm run typecheck` passed.
-- `npm run build` passed.
-- Vite preview responded with HTTP 200 at `http://127.0.0.1:4173`.
-- Public OpenAI Sites demo responded with HTTP 200 at `https://vibecoding-business-studio.moyamiga.chatgpt.site`.
-- Public JavaScript asset responded with HTTP 200.
+- [x] Primary `/feedback` Codex Session ID recorded
+- [x] GPT-5.6 build-time use through Codex documented
+- [x] `npm ci --no-audit --no-fund`
+- [x] `npm run typecheck`
+- [x] `npm run build`
+- [x] GitHub Actions CI
+- [x] Public OpenAI Sites deployment
+- [x] Public page and JavaScript asset returned HTTP 200
+- [x] Fallback coach path
+- [x] English judging flow
 
-This validates the exported project state. GitHub CI also passed on the pushed branch:
+Still required before final Devpost submission:
 
-- https://github.com/moyamiga/vibecoding-business-studio/actions/runs/29699072262
-
-## Verification Evidence
-
-Attach or link:
-
-- [x] successful `npm run typecheck`;
-- [x] successful `npm run build`;
-- [x] GitHub Actions run;
-- [x] public deployment;
-- [ ] OpenAI coach request using the declared model;
-- [x] fallback-coach test;
-- [x] English flow test;
-- [ ] Markdown report export;
-- [ ] mobile viewport test;
-- [ ] sub-three-minute video.
+- [ ] Public YouTube demo video under three minutes with voiceover
+- [ ] Confirm the video explicitly explains what was built and how Codex with GPT-5.6 was used
+- [ ] Confirm Markdown report download in the public demo
+- [ ] Confirm the mobile viewport path
+- [ ] Press final **Submit** rather than leaving the entry as a draft
 
 ## Integrity Note
 
-This document is intentionally conservative. The strongest submission is one
-where a judge can distinguish prior work, Build Week work, AI assistance, human
-decisions, and independently verified results.
+The strongest submission is one where judges can distinguish prior work, Build Week work, AI assistance, human decisions, build-time model use, runtime behavior, and independently verified results.
