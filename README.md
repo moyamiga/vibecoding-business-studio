@@ -2,98 +2,118 @@
 
 > **AI helps learners build. The Studio teaches them to write, plan, collaborate, and own decisions.**
 
-VibeCoding Business Studio is an AI-guided project learning workspace. It helps
-learners turn an idea they care about into a small, testable project while
-developing vibe coding, clearer writing, product judgment, business thinking,
-teamwork, role ownership, verification skills, and responsible AI use.
+VibeCoding Business Studio is an AI-guided project learning workspace. It helps learners turn an idea they care about into a small, testable project while developing vibe coding, clearer writing, product judgment, business thinking, teamwork, verification skills, and responsible AI use.
 
 [Live Demo](https://vibecoding-business-studio.moyamiga.chatgpt.site) |
-[Submission Draft](./DEVPOST_SUBMISSION.md) |
-[Judges Testing Guide](./JUDGES_TESTING.md)
+[Devpost Draft](./DEVPOST_SUBMISSION.md) |
+[Judges Testing Guide](./JUDGES_TESTING.md) |
+[Build Week Evidence](./BUILD_WEEK_EVIDENCE.md)
 
-This repository no longer treats any single game or artifact as the product.
-The product is the learning workflow around **ideas, writing, scope, milestones,
-business decisions, team roles, verification, reflection, and evidence**.
+## Origin
 
-## Why It Exists
+The project began when my children saw me building software with AI and asked whether they could use it to create a game of their own.
 
-AI makes implementation much faster, but speed alone does not teach someone:
+I first created a private development environment where they could experiment with Codex. As we worked, it became clear that the most important learning was not only writing code. They also needed to explain ideas clearly, decide what to build first, divide responsibilities, verify results, connect technical choices to business consequences, and understand which decisions still belonged to them.
 
-- who a product is for;
+The original game experiment gradually became an educational workspace. The game was only the starting context; the learning process became the product.
+
+## The Problem
+
+AI can make implementation much faster, but speed alone does not teach a learner:
+
+- who the product is for;
 - which problem matters;
+- how to write a clear request;
 - how to reduce a large idea;
-- how to write a clear request before asking AI or teammates to act;
-- what evidence would prove progress;
+- what should be built first;
+- how teammates should divide responsibility;
 - how to verify AI-generated work;
-- when a decision has business, privacy, or safety consequences;
-- how to assign roles so friends can collaborate without taking over the
-  roadmap;
-- how to explain what was learned.
+- how technical decisions affect cost, privacy, customers, or maintenance;
+- what was learned and what remains unclear.
 
 VibeCoding Business Studio places those decisions back in the learner's hands.
 
 ## What the Prototype Demonstrates
 
-The current MVP includes a complete browser-based learning loop:
+The MVP includes a complete browser-based learning loop:
 
-1. **Project brief** — the learner defines an idea, user, problem, motivation,
-   timebox, and experience level.
-2. **Reality check** — an OpenAI-powered or local fallback coach challenges the
-   scope and proposes the smallest useful milestone.
-3. **Milestone plan** — the Studio generates buildable stages with definitions
-   of done, learning concepts, and product questions.
-4. **Guided Codex session** - the learner reviews prompt clarity, records the
-   decision they own, connects one business or real-world tradeoff, assigns team
-   roles, defines evidence, and exports a structured prompt for Codex.
-5. **Reflection** - the learner explains what changed, what they decided, how
-   they verified it, what writing, teamwork, product, or business lesson
-   appeared, and what remains unclear.
-6. **Learning evidence** — the Studio exports a Markdown report for a learner,
-   mentor, parent, teacher, or portfolio.
+1. **Idea** — define the project, user, problem, motivation, timebox, and current experience.
+2. **Reality check** — challenge the ambition and identify the smallest useful milestone.
+3. **Milestones** — create buildable stages with definitions of done, activities, learning concepts, and product questions.
+4. **Guided Codex session** — improve the learner's request, record the learner-owned decision, connect one business tradeoff, define team roles, and generate a structured Codex prompt.
+5. **Reflection** — explain what changed, what was decided, how it was verified, what was learned, and what remains unclear.
+6. **Learning evidence** — export a Markdown report for a learner, teacher, mentor, parent, or portfolio.
 
-The application is English-only for judging, stores projects locally in the
-browser, and remains usable when the optional OpenAI endpoint is unavailable.
+The application stores project data in the browser and remains usable when the optional OpenAI endpoint is unavailable.
+
+## How Codex and GPT-5.6 Were Used
+
+The majority of the current product was developed with **Codex using GPT-5.6**.
+
+**Primary `/feedback` Codex Session ID:**
+
+```text
+019f2a76-e8c6-77c0-adc4-67efd2e87a
+```
+
+Codex with GPT-5.6 was used as a development partner to:
+
+- transform the original game-centered experiment into an educational product;
+- define the six-stage learning workflow;
+- design the TypeScript domain model;
+- implement the browser application;
+- build scope coaching and milestone generation;
+- add prompt-writing review, business reasoning, team roles, reflection, and report export;
+- create the optional server-side OpenAI coach endpoint;
+- remove the former game and Unity prototype from the product surface;
+- debug and revise the implementation;
+- prepare the README, evidence log, judging guide, and Devpost material;
+- validate the project through type-checking, production builds, CI, deployment, and HTTP checks.
+
+The human product owner made the central product decisions. Codex and GPT-5.6 accelerated reasoning, implementation, revision, and verification, but did not independently decide the final product direction.
+
+### Build-time model use vs. runtime AI
+
+The public OpenAI Sites demo currently uses a transparent local coaching fallback so judges can test the complete workflow without credentials.
+
+The repository also includes a server-side OpenAI Responses API endpoint at `api/coach.mjs`. Runtime API use is separate from the verified build-time use of GPT-5.6 through Codex. The project does not claim that every public demo interaction calls GPT-5.6.
+
+## Sample Learning Context
+
+The included sample is **Sneaker Studio Tycoon**, a small sneaker-company game concept.
+
+The game is not the product. It is a context where learners can practice:
+
+- writing a clearer build request;
+- assigning design, testing, business, and roadmap responsibilities;
+- choosing one small playable milestone;
+- postponing excessive features;
+- connecting gameplay choices to marketing, customer value, hiring, taxes, accounting, operations, and leadership;
+- explaining how the result was verified.
 
 ## Judge Path
 
 A reviewer can understand the prototype in under three minutes:
 
-1. Open the application.
+1. Open the [live demo](https://vibecoding-business-studio.moyamiga.chatgpt.site).
 2. Select **Load sample**.
-3. Review the scope challenge and postponed features for the sample sneaker
-   company game.
+3. Review the scope challenge, included work, and postponed features.
 4. Open **Milestones** and inspect the definition of done.
-5. Open **Build session**, review writing feedback, inspect team roles, and copy
-   the generated Codex prompt.
-6. Complete or inspect the reflection.
+5. Open **Build session** and review writing feedback, the learner decision, business lens, team roles, and generated Codex prompt.
+6. Inspect or complete the reflection.
 7. Export the learning report.
 
 See [`JUDGES_TESTING.md`](./JUDGES_TESTING.md) for the detailed path.
-
-## Build Week Submission Essentials
-
-OpenAI Build Week submissions close on **July 21, 2026 at 5:00 PM Pacific Time**. Before submitting, verify these items against the official Devpost rules:
-
-- working public demo URL: <https://vibecoding-business-studio.moyamiga.chatgpt.site>;
-- public YouTube demo video under three minutes with voiceover;
-- repository URL for judging and testing;
-- README explanation of how Codex and GPT-5.6 were used;
-- `/feedback` Codex Session ID from the primary build thread;
-- exact GPT-5.6 model evidence;
-- clear distinction between prior work and Build Week work.
 
 ## Product Principles
 
 ### The learner owns decisions
 
-Codex may accelerate implementation, debugging, and explanation. It should not
-silently decide scope, product priorities, cost, privacy, publication, or other
-high-risk choices.
+AI may accelerate implementation, explanation, debugging, and documentation. It should not silently decide scope, priorities, money, privacy, publication, or other high-risk choices.
 
 ### Small evidence beats large ambition
 
-A working, testable milestone is more valuable than a long feature list with no
-proof.
+A working, testable milestone is more valuable than a long feature list with no proof.
 
 ### Verification is part of learning
 
@@ -105,25 +125,13 @@ The learner should be able to answer:
 - What evidence exists?
 - What remains uncertain?
 
-### AI output is not automatically correct
-
-The Studio asks the learner to identify what they inspected themselves instead
-of accepting a result because an AI produced it.
-
 ### Collaboration needs roles
 
-Learners can invite friends, but each teammate should have a written area of
-ownership. A designer can own visuals without changing the roadmap. A tester can
-log bugs without redefining scope. A business lead can propose marketing, taxes,
-accounting, hiring, or partnership ideas without silently taking over the
-project.
+A designer may own visual direction without silently changing the roadmap. A tester may record bugs without redefining product priorities. A business lead may propose marketing, pricing, hiring, or partnership ideas while major scope decisions remain visible to the project owner and team.
 
-### Games can teach real-world thinking
+### AI output is not automatically correct
 
-A learner may build a game, but the lesson can go beyond the game. A sneaker
-company game can introduce marketing, customer value, hiring, taxes, accounting,
-international relationships, leadership, and planning while the team implements
-small playable decisions.
+The Studio asks learners to identify what they inspected themselves instead of accepting a result merely because AI produced it.
 
 ## Technology
 
@@ -135,8 +143,7 @@ small playable decisions.
 - GitHub Actions for type-checking and build validation
 - Vercel-compatible serverless function
 
-The frontend has no runtime framework dependency. This keeps the MVP small and
-makes the educational flow easier to inspect.
+The frontend has no runtime UI framework dependency.
 
 ## Run Locally
 
@@ -162,39 +169,28 @@ npm run build
 npm run preview
 ```
 
-## Optional OpenAI Coach
+## Optional Runtime OpenAI Coach
 
-The browser never receives the API key. The frontend sends the project brief to
-`/api/coach`, and the server-side function calls the OpenAI Responses API.
+The browser never receives the API key. The frontend sends the project brief to `/api/coach`, and the server-side function calls the OpenAI Responses API.
 
-Create a local or deployment environment using:
+Configure a local or deployed environment with:
 
 ```bash
 OPENAI_API_KEY=...
 OPENAI_MODEL=...
 ```
 
-Use the exact GPT-5.6 API model identifier enabled for your OpenAI project. The `.env.example` file intentionally uses a placeholder; record the deployed model and one verified request in `BUILD_WEEK_EVIDENCE.md`.
+Never place the OpenAI API key in a `VITE_` variable, because Vite client variables are included in browser code.
 
-When the endpoint is missing, not configured, or unavailable, the application
-uses transparent local coaching rules. The UI clearly labels whether a plan came
-from OpenAI, the local fallback, or the sample project.
-
-### Security rule
-
-Never use a `VITE_` variable for the OpenAI API key. Vite client variables are
-included in browser code.
+When the endpoint is unavailable, the application uses transparent local coaching rules and labels the source in the interface.
 
 ## Deployment
 
 ### OpenAI Sites
 
-The primary public demo is deployed with OpenAI Sites:
+Primary public demo:
 
-<https://vibecoding-business-studio.moyamiga.chatgpt.site>
-
-This deployment runs the full browser workflow and uses the transparent local
-coach fallback when the optional OpenAI endpoint is not configured.
+https://vibecoding-business-studio.moyamiga.chatgpt.site
 
 ### Vercel
 
@@ -204,93 +200,53 @@ The repository includes `api/coach.mjs` and `vercel.json`.
 2. Add `OPENAI_API_KEY`.
 3. Add `OPENAI_MODEL`.
 4. Deploy.
-5. Confirm `/api/coach` responds through the application.
+5. Verify `/api/coach` through the application.
 
 ### Static hosting
 
-The frontend can also be deployed to GitHub Pages, Netlify, Cloudflare Pages, or
-another static host. In that mode, the local fallback coach remains functional.
-To use OpenAI, point the frontend to a secure server-side endpoint rather than
-placing credentials in the browser.
-
-## Repository Structure
-
-```text
-.
-|-- api/
-|   `-- coach.mjs
-|-- src/
-|   |-- coach.ts
-|   |-- i18n.ts
-|   |-- main.ts
-|   |-- report.ts
-|   |-- sample.ts
-|   |-- storage.ts
-|   |-- styles.css
-|   `-- types.ts
-|-- vite/
-|   |-- config.dev.mjs
-|   `-- config.prod.mjs
-|-- .github/workflows/ci.yml
-|-- BUILD_WEEK_EVIDENCE.md
-|-- DEVPOST_SUBMISSION.md
-|-- JUDGES_TESTING.md
-|-- LEARNING_METHOD.md
-|-- package-lock.json
-`-- README.md
-```
+The frontend can also be deployed to GitHub Pages, Netlify, Cloudflare Pages, or another static host. In that mode, the local fallback remains functional.
 
 ## Privacy and Safety
 
 - Do not enter API keys, credentials, or private chats into a project brief.
 - Do not publish identifying information about minors.
-- Use mentor or adult approval for money, publication, legal, privacy, external
-  accounts, and irreversible changes.
+- Require mentor or adult approval for money, publication, legal, privacy, external accounts, and irreversible changes.
 - Treat generated plans and code as suggestions that require inspection.
-- The browser prototype stores its project in local storage; it is not a
-  classroom records system.
-- The current prototype is educational software, not legal, medical, or
-  financial advice.
+- The browser prototype stores project data locally; it is not a classroom records system.
 
-## What This MVP Intentionally Does Not Include
+## What the MVP Intentionally Does Not Include
 
 - authentication;
 - classroom rosters;
 - payments;
 - grading automation;
 - native mobile applications;
-- complex automated team permissions;
-- Telegram or external messaging integration;
+- automated role permissions;
 - real-time collaboration;
-- parent or teacher dashboard;
+- parent or teacher dashboards;
 - repository write access;
 - a full learning management system.
 
-Those features are postponed until the learning loop itself is validated.
+These features are postponed until the central learning loop is validated.
 
-## Historical Note
+## Prior Work Disclosure
 
-The repository began as a small game-building experiment. That experiment helped
-surface the educational method, but it is not the product.
+The repository began as a game-building experiment. That work helped reveal the educational method, but it is not the current product.
 
-The original TempleFall prototype remains available in Git history at commit:
+The original TempleFall prototype remains available in Git history at:
 
 ```text
 13a96227666b438cd59377517d79b6bdae1e620e
 ```
 
-See [`BUILD_WEEK_EVIDENCE.md`](./BUILD_WEEK_EVIDENCE.md) for the distinction
-between prior work and the current educational product.
+See [`BUILD_WEEK_EVIDENCE.md`](./BUILD_WEEK_EVIDENCE.md) for the detailed separation between prior work, Build Week work, human decisions, Codex assistance, and verified results.
 
 ## Submission Track
 
-Recommended OpenAI Build Week track: **Education**.
+Recommended OpenAI Build Week category: **Education**.
 
-The strongest claim is not that AI can build software quickly. It is that a
-structured workflow can help learners keep ownership of judgment while AI
-accelerates execution.
+The strongest claim is not that AI can build software quickly. It is that a structured workflow can help learners retain ownership of judgment while AI accelerates execution.
 
 ## License
 
-MIT. See [`LICENSE`](./LICENSE) and
-[`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md).
+MIT. See [`LICENSE`](./LICENSE) and [`THIRD_PARTY_NOTICES.md`](./THIRD_PARTY_NOTICES.md).
